@@ -13,10 +13,10 @@ class CWButton: UIButton {
         super.init(frame: frame)
         configure()
     }
-    init(backgroundColor: UIColor, title:String, tintColor:UIColor?){
+    init(backgroundColor: UIColor, title:String){
         super.init(frame: .zero)
         self.backgroundColor = backgroundColor
-        self.tintColor = tintColor ?? UIColor.white
+        //self.tintColor = tintColor ?? UIColor.white
         setTitle(title, for: .normal)
         configure()
     }
@@ -28,7 +28,7 @@ class CWButton: UIButton {
     func configure(){
         layer.cornerRadius = 8
         titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        setTitleColor(.red, for: .normal)
+        setTitleColor(.white, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
     }
 }

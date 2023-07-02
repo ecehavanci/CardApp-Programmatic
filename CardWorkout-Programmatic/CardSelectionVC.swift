@@ -9,9 +9,9 @@ import UIKit
 
 class CardSelectionVC: UIViewController {
     let cardImageView = UIImageView()
-    let stopButton = CWButton(backgroundColor: .systemRed, title: "Stooop!", tintColor: UIColor.white)
-    //let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
-    //let rulesButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    let stopButton = CWButton(backgroundColor: .systemRed, title: "Stooop!")
+    let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
+    let rulesButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +23,8 @@ class CardSelectionVC: UIViewController {
     func configureUI(){
         configureCardImageView()
         configureStopButton()
+        configureResetButton()
+        configureRulesButton()
     }
 
     func configureCardImageView(){
@@ -45,9 +47,27 @@ class CardSelectionVC: UIViewController {
                    stopButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                    stopButton.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 30)
         ])
-       
         // cardImageView.translatesAutoresizingMaskIntoConstraints = false //dont have to write because we already have it in CWBUTTON
-        
+    }
+    
+    func configureResetButton(){
+        view.addSubview(resetButton)
+        NSLayoutConstraint.activate([
+            resetButton.widthAnchor.constraint(equalToConstant: 115),
+            resetButton.heightAnchor.constraint(equalToConstant: 50),
+            resetButton.leadingAnchor.constraint(equalTo: stopButton.leadingAnchor),
+            resetButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor,constant: 20)
+        ])
+    }
+    
+    func configureRulesButton(){
+        view.addSubview(rulesButton)
+        NSLayoutConstraint.activate([
+            rulesButton.widthAnchor.constraint(equalToConstant: 115),
+            rulesButton.heightAnchor.constraint(equalToConstant: 50),
+            rulesButton.trailingAnchor.constraint(equalTo: stopButton.trailingAnchor),
+            rulesButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor,constant: 20)
+        ])
     }
     
     /*
