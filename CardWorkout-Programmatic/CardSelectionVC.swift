@@ -12,11 +12,14 @@ class CardSelectionVC: UIViewController {
     let stopButton = CWButton(backgroundColor: .systemRed, title: "Stooop!")
     let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
     let rulesButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    let deck: [UIImage]  = Deck.allValues
+    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configureUI()
+        startTimer()
         // Do any additional setup after loading the view.
     }
     
@@ -26,7 +29,15 @@ class CardSelectionVC: UIViewController {
         configureResetButton()
         configureRulesButton()
     }
+    
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(showRandomCard), userInfo: nil, repeats: true)
+    }
 
+    @objc func showRandomCard(){
+            cardImageView.image = deck.randomElement()
+    }
+    
     func configureCardImageView(){
         view.addSubview(cardImageView) //drag the card onto the subview
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,6 +61,10 @@ class CardSelectionVC: UIViewController {
         // cardImageView.translatesAutoresizingMaskIntoConstraints = false //dont have to write because we already have it in CWBUTTON
     }
     
+    func stopTimer(){
+        
+    }
+    
     func configureResetButton(){
         view.addSubview(resetButton)
         NSLayoutConstraint.activate([
@@ -60,14 +75,27 @@ class CardSelectionVC: UIViewController {
         ])
     }
     
+    func resetTimer(){
+        
+    }
+    
     func configureRulesButton(){
         view.addSubview(rulesButton)
+        rulesButton.addTarget(self, action: #selector(presentRulesVC), for: .touchUpInside ) //add navigation basicly
+        //always touchUpInside!
+        
         NSLayoutConstraint.activate([
             rulesButton.widthAnchor.constraint(equalToConstant: 115),
             rulesButton.heightAnchor.constraint(equalToConstant: 50),
             rulesButton.trailingAnchor.constraint(equalTo: stopButton.trailingAnchor),
             rulesButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor,constant: 20)
         ])
+    }
+    
+    @objc func presentRulesVC(){
+        let rulesPage = RulesVC()
+        present(rulesPage, animated: true)
+        
     }
     
     /*

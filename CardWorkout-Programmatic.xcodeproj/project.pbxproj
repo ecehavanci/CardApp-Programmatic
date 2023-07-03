@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96203A292A532370006E672E /* CardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96203A282A532370006E672E /* CardDeck.swift */; };
+		96AC41F52A51B83800AEC0D4 /* RulesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AC41F42A51B83800AEC0D4 /* RulesVC.swift */; };
 		96AF00B22A4F5E34003264DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF00B12A4F5E34003264DA /* AppDelegate.swift */; };
 		96AF00B42A4F5E34003264DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AF00B32A4F5E34003264DA /* SceneDelegate.swift */; };
 		96AF00BB2A4F5E34003264DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96AF00BA2A4F5E34003264DA /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		96203A282A532370006E672E /* CardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDeck.swift; sourceTree = "<group>"; };
+		96AC41F42A51B83800AEC0D4 /* RulesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesVC.swift; sourceTree = "<group>"; };
 		96AF00AE2A4F5E34003264DA /* CardWorkout-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CardWorkout-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96AF00B12A4F5E34003264DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		96AF00B32A4F5E34003264DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				96AF00BF2A4F5E34003264DA /* Info.plist */,
 				96AF00C52A4F60FA003264DA /* CardSelectionVC.swift */,
 				96AF00C72A4F62B1003264DA /* CWButton.swift */,
+				96AC41F42A51B83800AEC0D4 /* RulesVC.swift */,
+				96203A282A532370006E672E /* CardDeck.swift */,
 			);
 			path = "CardWorkout-Programmatic";
 			sourceTree = "<group>";
@@ -138,7 +144,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				96AF00B22A4F5E34003264DA /* AppDelegate.swift in Sources */,
+				96AC41F52A51B83800AEC0D4 /* RulesVC.swift in Sources */,
 				96AF00B42A4F5E34003264DA /* SceneDelegate.swift in Sources */,
+				96203A292A532370006E672E /* CardDeck.swift in Sources */,
 				96AF00C62A4F60FA003264DA /* CardSelectionVC.swift in Sources */,
 				96AF00C82A4F62B1003264DA /* CWButton.swift in Sources */,
 			);
