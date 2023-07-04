@@ -9,9 +9,9 @@ import UIKit
 
 class CardSelectionVC: UIViewController {
     let cardImageView = UIImageView()
-    let stopButton = CWButton(backgroundColor: .systemRed, title: "Stooop!")
-    let resetButton = CWButton(backgroundColor: .systemGreen, title: "Reset")
-    let rulesButton = CWButton(backgroundColor: .systemBlue, title: "Rules")
+    let stopButton = CWButton(color: .systemRed, title: "Stooop!",systemImageName: "stop.circle")
+    let resetButton = CWButton(color: .systemGreen, title: "Reset",systemImageName: "arrow.clockwise.heart")
+    let rulesButton = CWButton(color: .systemBlue, title: "Rules",systemImageName: "list.bullet")
     let deck: [UIImage]  = Deck.allValues
     var timer: Timer!
     
@@ -42,6 +42,7 @@ class CardSelectionVC: UIViewController {
         view.addSubview(cardImageView) //drag the card onto the subview
         cardImageView.translatesAutoresizingMaskIntoConstraints = false
         cardImageView.image = UIImage(named: "AS")
+        cardImageView.layer.shadowOpacity = 1
         
         NSLayoutConstraint.activate([cardImageView.widthAnchor.constraint(equalToConstant: 250),//give height
                                      cardImageView.heightAnchor.constraint(equalToConstant: 350),//give width
