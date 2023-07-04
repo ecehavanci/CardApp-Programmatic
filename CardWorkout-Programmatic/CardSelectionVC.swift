@@ -59,11 +59,13 @@ class CardSelectionVC: UIViewController {
                    stopButton.topAnchor.constraint(equalTo: cardImageView.bottomAnchor, constant: 30)
         ])
         // cardImageView.translatesAutoresizingMaskIntoConstraints = false //dont have to write because we already have it in CWBUTTON
+        stopButton.addTarget(self, action: #selector(stopTimer), for: .touchUpInside)
     }
     
-    func stopTimer(){
-        
+    @objc func stopTimer(){
+        timer.invalidate()
     }
+    
     
     func configureResetButton(){
         view.addSubview(resetButton)
@@ -73,10 +75,13 @@ class CardSelectionVC: UIViewController {
             resetButton.leadingAnchor.constraint(equalTo: stopButton.leadingAnchor),
             resetButton.topAnchor.constraint(equalTo: stopButton.bottomAnchor,constant: 20)
         ])
+        
+        resetButton.addTarget(self, action: #selector(resetTimer), for: .touchUpInside)
     }
     
-    func resetTimer(){
-        
+    @objc func resetTimer(){
+        timer.invalidate()
+        startTimer()
     }
     
     func configureRulesButton(){
